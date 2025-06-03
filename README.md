@@ -51,6 +51,8 @@ cd flights-mcp
 uv run src/flights-mcp/main.py
 ```
 
+The server binds to 0.0.0.0, making it accessible on all network interfaces of the host machine.
+
 ## Environment Variables
 
 The following environment variables are required:
@@ -65,6 +67,10 @@ The following environment variables are required:
 - **`FLIGHTS_HTTP_PORT`** *(optional)*: Port for HTTP/SSE transport
   - Only used when `FLIGHTS_TRANSPORT` is `streamable_http` or `sse`
   - Default: `4200`
+
+- **`FLIGHTS_HTTP_PATH`** *(optional)*: URI path for the endpoint 
+  - Only used when `FLIGHTS_TRANSPORT` is `streamable_http` or `sse`
+  - Default: `/mcp`
 
 ## MCP Tools
 

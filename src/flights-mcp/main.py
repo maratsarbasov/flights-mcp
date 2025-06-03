@@ -257,7 +257,7 @@ if __name__ == "__main__":
             transport="streamable-http",
             host="0.0.0.0",
             port=int(os.getenv("FLIGHTS_HTTP_PORT", 4200)),
-            path="/flights",
+            path=os.getenv("FLIGHTS_HTTP_PATH", "/mcp"),
             log_level="debug",
         )
     elif use_sse:
@@ -265,7 +265,7 @@ if __name__ == "__main__":
             transport="sse",
             host="0.0.0.0",
             port=int(os.getenv("FLIGHTS_HTTP_PORT", 4200)),
-            path="/flights",
+            path=os.getenv("FLIGHTS_HTTP_PATH", "/mcp"),
             log_level="debug",
         )
     else:
