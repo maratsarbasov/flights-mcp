@@ -2,6 +2,22 @@
 
 A Model Context Protocol (MCP) server that provides flight search capabilities using the Aviasales Flight Search API. This server allows you to search for flights, filter results, get detailed flight information, and generate booking links.
 
+https://github.com/user-attachments/assets/87d79d54-c4ab-4938-9792-18572315f1ba
+
+## How to use
+
+You can either use the **remote MCP server** or deploy your own instance:
+
+- **Remote MCP**  
+  A public instance is available at:  
+  `https://findflights.me/sse`  
+  This server uses the **SSE** transport protocol and is ready to use without setup.
+  > ⚠️ **Important:** Currently not all LLM clients support remote MCP connections. For example, Claude.ai supports remote MCP integrations only on **Pro+ plans**.
+
+- **Self-Hosted Deployment**  
+  If you prefer to run your own server, follow the instructions in the [Installation](#installation) section.  
+  > **Note**: To deploy your own server, you must obtain an Aviasales API Key and Marker ID.
+
 ## Features
 
 - **Flight Search**: Search for one-way, round-trip, and multi-city flights
