@@ -250,7 +250,8 @@ async def request_booking_link(
     return 
 
 if __name__ == "__main__":
-    use_streamable_http = os.getenv("FLIGHTS_STREAMABLE_HTTP", 'False').lower() in ('true', '1', 't')
+    use_streamable_http = os.getenv("FLIGHTS_TRANSPORT", '').lower() == 'streamable_http'
+    use_sse = os.getenv("FLIGHTS_TRANSPORT", '').lower() == 'sse'
     if use_streamable_http:
         mcp.run(
             transport="streamable-http",
@@ -259,7 +260,15 @@ if __name__ == "__main__":
             path="/flights",
             log_level="debug",
         )
+    elif use_sse:
+        mcp.run(
+            transport="sse",
+            host="0.0.0.0",
+            port=int(os.getenv("FLIGHTS_STREAMABLE_HTTP_PORT", 4200)),
+            path="/flights",
+            log_level="debug",
+        )
     else:
-        mcp.run()
-
+        mcp.run(transport="stdio",
+                log_level="debug")
 
