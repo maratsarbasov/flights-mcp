@@ -1,0 +1,2 @@
+# Flights MCP Server
+
