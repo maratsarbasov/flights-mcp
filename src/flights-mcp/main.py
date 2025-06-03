@@ -256,7 +256,7 @@ if __name__ == "__main__":
         mcp.run(
             transport="streamable-http",
             host="0.0.0.0",
-            port=int(os.getenv("FLIGHTS_STREAMABLE_HTTP_PORT", 4200)),
+            port=int(os.getenv("FLIGHTS_HTTP_PORT", 4200)),
             path="/flights",
             log_level="debug",
         )
@@ -264,7 +264,7 @@ if __name__ == "__main__":
         mcp.run(
             transport="sse",
             host="0.0.0.0",
-            port=int(os.getenv("FLIGHTS_STREAMABLE_HTTP_PORT", 4200)),
+            port=int(os.getenv("FLIGHTS_HTTP_PORT", 4200)),
             path="/flights",
             log_level="debug",
         )
