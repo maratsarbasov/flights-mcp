@@ -269,6 +269,5 @@ if __name__ == "__main__":
             log_level="debug",
         )
     else:
-        mcp.run(transport="stdio",
-                log_level="debug")
+        mcp.run(transport="stdio")
 
